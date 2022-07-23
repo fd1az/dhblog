@@ -9,6 +9,7 @@ async function main() {
       description: "zarpado post",
     },
   });
+
 }
 main()
   .catch((e) => console.log(e))
