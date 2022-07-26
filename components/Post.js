@@ -2,7 +2,7 @@ import React from "react";
 import { Box, Text, Flex, Center } from "@chakra-ui/react";
 import Link from "next/link.js";
 
-const Post = ({ title }) => {
+const Post = ({ title, postId }) => {
   return (
     <Box
       w="300px"
@@ -24,7 +24,7 @@ const Post = ({ title }) => {
         </Box>
 
         <Flex w="90%" justifyContent={"flex-end"} m="auto">
-          <Link href="/post/1">
+          <Link href={`/post/${postId}`}>
             <Box
               as="button"
               bg="withe"
