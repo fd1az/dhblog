@@ -2,9 +2,10 @@ import { Box, Flex } from "@chakra-ui/react";
 import Post from "../components/Post.js";
 import { getAllPosts } from "../repo/post.js";
 import { useQuery } from "@tanstack/react-query";
+import config from "../config.js";
 
 const fetchPost = async () => {
-  return fetch("http://localhost:3000/api/post").then((data) => data.json());
+  return fetch(`${config.baseURL}api/post`).then((data) => data.json());
 };
 
 export default function Home({ posts }) {

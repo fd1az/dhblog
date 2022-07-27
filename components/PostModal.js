@@ -14,9 +14,10 @@ import {
   useToast,
 } from "@chakra-ui/react";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
+import config from "../config.js";
 
 const createPost = async (post) => {
-  return fetch("http://localhost:3000/api/post", {
+  return fetch(`${config.baseURL}api/post`, {
     method: "POST",
     body: JSON.stringify(post),
     headers: {
