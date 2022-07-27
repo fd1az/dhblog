@@ -17,7 +17,7 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import config from "../config.js";
 
 const createPost = async (post) => {
-  return fetch(`${config.baseURL}api/post`, {
+  return fetch(`${config.baseURL}/api/post`, {
     method: "POST",
     body: JSON.stringify(post),
     headers: {

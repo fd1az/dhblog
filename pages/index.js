@@ -5,7 +5,7 @@ import { useQuery } from "@tanstack/react-query";
 import config from "../config.js";
 
 const fetchPost = async () => {
-  return fetch(`${config.baseURL}api/post`).then((data) => data.json());
+  return fetch(`${config.baseURL}/api/post`).then((data) => data.json());
 };
 
 export default function Home({ posts }) {
