@@ -37,14 +37,16 @@ export async function getStaticPaths() {
   //[{ params: { id: '1' } }, { params: { id: '2' } }]
   return {
     paths: posts.map((post) => ({ params: { id: post.id } })),
-    fallback: true, // can also be true or 'blocking'
+    fallback: false,
+    // can also be true or 'blocking'
   };
 }
 
 export async function getStaticProps({ params }) {
   const post = await getPost(params.id);
   return {
-    props: { post }, // will be passed to the page component as props
+    props: { post },
+    revalidate: 1, // will be passed to the page component as props
   };
 }
 export default PostDetail;
