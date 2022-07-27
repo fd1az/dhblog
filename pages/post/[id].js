@@ -1,8 +1,13 @@
 import { Box, Center, Divider } from "@chakra-ui/react";
+import { useRouter } from "next/router.js";
 import React from "react";
 import { getPost, getAllPosts } from "../../repo/post.js";
 
 const PostDetail = ({ post }) => {
+  const router = useRouter();
+  if (router.isFallback) {
+    return <div>Loading...</div>;
+  }
   return (
     <Center>
       <Box maxW="sm" borderWidth="1px" borderRadius="lg" overflow="hidden">
